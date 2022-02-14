@@ -16,20 +16,29 @@
             </div>
             <div class="card-body">
                 <div class="contanier">
-                    <form action=>
+                    <form action="" class="was-validated">
                         <div class="mb-3">
-                            <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Email" required="">
+                            <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Email"  aria-describedby="email" required>
+                            <div id="email-feedback" class="invalid-feedback">
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <input type="url" class="form-control" id="url" placeholder="Url" require="">
+                            <input type="url" class="form-control" id="url" placeholder="Url" aria-describedby="url-feedback" required>
+                            <div id="url-feedback" class="invalid-feedback">
+                            </div>
                         </div>
+                        <!-- <div class="mb-3">
+                            <input type="url" class="form-control was-validated" id="url" placeholder="Url" aria-describedby="url-feedback" require>
+                            <div id="url-feedback" class="invalid-feedback">
+                            </div>
+                        </div> -->
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="check">
+                            <input id="check" type="checkbox" class="form-check-input">
                             <label class="form-check-label" data="0">Mémoriser l'adresse mail a des fin commerciales </label>
                         </div>
-                        <button class="btn btn-primary" onclick="Insert(mail.value, url.value, check);">Sauvergarder</button>
-                    </form>
-                </div>
+                    </div>
+                </form>
+                <button class="btn btn-primary"  onclick="insert();">Sauvergarder</button>
             </div>
         </div>  
     </div>
