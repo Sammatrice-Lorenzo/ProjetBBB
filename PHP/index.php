@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <title>Big Blue Button</title>
+        <script src="../JS/fonctions.js"></script>
+        <script src="../JQuery/JQuery_3.5.1.js"></script>
     </head>
 <body>
     <div class="container">
@@ -14,7 +16,7 @@
             </div>
             <div class="card-body">
                 <div class="contanier">
-                    <form>
+                    <form action=>
                         <div class="mb-3">
                             <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Email" required="">
                         </div>
@@ -22,15 +24,14 @@
                             <input type="url" class="form-control" id="url" placeholder="Url" require="">
                         </div>
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Mémoriser l'adresse mail a des fin commerciales </label>
+                            <input type="checkbox" class="form-check-input" id="check">
+                            <label class="form-check-label" data="0">Mémoriser l'adresse mail a des fin commerciales </label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Sauvergarder</button>
+                        <button class="btn btn-primary" onclick="Insert(mail.value, url.value, check);">Sauvergarder</button>
                     </form>
                 </div>
             </div>
         </div>  
     </div>
-
 </body>
 </html>
