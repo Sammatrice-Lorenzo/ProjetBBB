@@ -27,11 +27,6 @@
                             <div id="url-feedback" class="invalid-feedback">
                             </div>
                         </div>
-                        <!-- <div class="mb-3">
-                            <input type="url" class="form-control was-validated" id="url" placeholder="Url" aria-describedby="url-feedback" require>
-                            <div id="url-feedback" class="invalid-feedback">
-                            </div>
-                        </div> -->
                         <div class="mb-3 form-check">
                             <input id="check" type="checkbox" class="form-check-input">
                             <label class="form-check-label" data="0">Mémoriser l'adresse mail a des fin commerciales </label>
