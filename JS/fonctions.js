@@ -9,6 +9,7 @@ function insert()
         $("#form").addClass("was-validated")
     }
     else{
+        
         check = 0
         if($("input:checked").length != 0) check = 1
     
