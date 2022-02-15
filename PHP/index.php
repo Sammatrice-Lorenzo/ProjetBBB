@@ -43,7 +43,6 @@ echo '<p>Votre message a bien été envoyé.</p>';
                 </form>
                 <button class="btn btn-primary"  onclick="insert();">Sauvergarder</button>
             </div>
-            
         </div>  
     </div>
 </body>
