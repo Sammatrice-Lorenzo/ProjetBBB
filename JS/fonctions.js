@@ -1,7 +1,13 @@
 function insert()
 {
-    if($("#mail").val() === "")  $("#email-feedback").append("Veuillez sasir l'adresse mail")
-    else if($("#url").val() === "")  ($("#url-feedback").append("Veuillez saiir l'url")) 
+    if($("#mail").val() === ""){
+        $("#form").addClass("was-validated")
+        $("#email-feedback").append("Veuillez sasir l'adresse mail")
+    }
+    else if($("#url").val() === "")  {
+        ($("#url-feedback").append("Veuillez saisir l'url")) 
+        $("#form").addClass("was-validated")
+    }
     else{
         check = 0
         if($("input:checked").length != 0) check = 1

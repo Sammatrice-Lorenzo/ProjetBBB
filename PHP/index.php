@@ -16,7 +16,7 @@
             </div>
             <div class="card-body">
                 <div class="contanier">
-                    <form action="" class="was-validated">
+                    <form id="form" action="" class="">
                         <div class="mb-3">
                             <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Email"  aria-describedby="email" required>
                             <div id="email-feedback" class="invalid-feedback">
