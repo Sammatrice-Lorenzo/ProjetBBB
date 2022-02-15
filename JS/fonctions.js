@@ -9,14 +9,15 @@ function insert()
         $("#form").addClass("was-validated")
     }
     else{
-        
+        $("#form").removeClass("was-validated")
         check = 0
         if($("input:checked").length != 0) check = 1
     
         $.ajax(
             {
                 method:'GET',
-                url: "../PHP/ajout.php",
+                // url: "../PHP/ajout.php",
+                url: "./PHP/ajout.php",
                 data: "mail="+$("#mail").val()+"&url="+$("#url").val()+"&check="+check,         
                 success: function(data)
                 {
