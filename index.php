@@ -33,7 +33,7 @@
                         </div>
                     </div>
                 </form>
-                <button class="btn btn-primary"  onclick="insert();">Sauvergarder</button>
+                <button type="submit" class="btn btn-primary"  onclick="insert();">Sauvergarder</button>
             </div>
         </div>  
     </div>
