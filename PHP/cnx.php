@@ -1,7 +1,7 @@
 <?php
 //connexion a la base de données
 // dsn = Data Source Name = driver MYSQL
-$dsn='mysql:dbname=tickets;host=localhost';
+$dsn='mysql:dbname=bddhackathon;host=localhost';
 //login
 $login='root';
 // Mot de passe

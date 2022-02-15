@@ -7,14 +7,22 @@
         <title>Big Blue Button</title>
     </head>
 <body>
+
+<?php
+$retour = mail($_POST['mail'],$_POST['url']);
+if ($retour)
+echo '<p>Votre message a bien été envoyé.</p>';
+?>
+
     <div class="container">
+
         <div class="card text-center mt-5">
             <div class="card-header">
                 Big Blue Button Récuperation Vidéo 
             </div>
             <div class="card-body">
                 <div class="contanier">
-                    <form>
+                <form>
                         <div class="mb-3">
                             <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Email" required="">
                         </div>
