@@ -26,6 +26,7 @@ function insert()
                 data: "mail="+$("#mail").val()+"&url="+$("#url").val()+"&check="+check,         
                 success: function(data)
                 {
+                    sendMail();
                     $("#mail").val('')
                     $("#url").val('')
                     $("#check").val('')
@@ -50,4 +51,24 @@ function urlLocate(url) {
     // var res = url.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
     var reg = new RegExp('/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g');
     return (reg.test(url));
+}
+
+function sendMail() {
+    $.ajax(
+        {
+            method:'GET',
+            url: "./PHP/sendMail.php",
+            success: function(data)
+            {
+                $("#mail").val('')
+                $("#url").val('')
+                $("#check").val('')
+            },
+            errors: function()
+            {
+                $('.container')
+                alert("Erreur");
+            },
+        }
+    );
 }

@@ -1,6 +1,6 @@
 <?php
 include('cnx.php');
-include('index.php');
+// include('index.php');
 $sql = $cnx->prepare("insert into user (mail, url, approbation) VALUES (?, ?, ?)");
 
 $sql->bindValue(1, $_GET['mail']);
