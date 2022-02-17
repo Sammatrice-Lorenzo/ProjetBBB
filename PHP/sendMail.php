@@ -18,23 +18,23 @@ $mailUser = $sql->fetchAll();
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
-$mdp = "hackathonbluebutton2022";
+// $mdp = "hackathonbluebutton2022";
 
 try {
     //Server settings
     $mail->setLanguage('fr','/PHPMailer/language/');
     $mail->SMTPDebug = 2;
     $mail->isSMTP();
-    $mail->Host = 'smtp-mail.outlook.com'; //Connection du serveur SMTP de outlook
+    $mail->Host = 'smtp.laposte.net'; //Connection du serveur SMTP de outlook
     $mail->SMTPAuth = true;
-    $mail->Username = "lvdlbbb@outlook.fr"; //Mail du serveur 
-    $mail->Password = $mdp;//Mdp
-    $mail->setFrom('lvdlbbb@outlook.fr');//Connection du serveur SMTP de outlook
+    $mail->Username = 'lvdlbbb@laposte.net'; //Mail du serveur 
+    $mail->Password = 'Hackathonbluebutton2022!';//Mdp
+    $mail->setFrom('lvdlbbb@laposte.net');//Connection du serveur SMTP de outlook
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
-
+    
     //Destinataire
-    $mail->setFrom('lvdlbbb@outlook.fr');
+    $mail->setFrom('lvdlbbb@laposte.net');
     $mail->addAddress($mailUser[0]['mail']); //Ajout du récepteur du mail
 
     //Attachments
@@ -44,7 +44,7 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = utf8_decode("Big Blue Button : lien de téléchargement visio");
-    $mail->Body = utf8_decode("Voici le lien de la visio <br><br>Bien cordialement <br><br> L'équipe LVDL");
+    $mail->Body = utf8_decode("<p>Voici le lien de la visio <br><br>Bien cordialement <br><br> L'équipe LVDL</p>");
 
     $mail->send();
     echo 'Message has been sent';
