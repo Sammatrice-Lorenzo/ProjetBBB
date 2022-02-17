@@ -9,7 +9,9 @@
         <script src="./JQuery/JQuery_3.5.1.js"></script>
     </head>
 <body>
+
     <div class="container">
+
         <div class="card text-center mt-5">
             <div class="card-header">
                 Big Blue Button Récuperation Vidéo 
