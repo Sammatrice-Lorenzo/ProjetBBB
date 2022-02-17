@@ -86,7 +86,7 @@ function sendMail() {
 function removeData() {
     $.ajax(
     {
-        url:"../PHP/effaceMail.php",
+        url:"./PHP/effaceMail.php",
         success: function()
         {
             $("#mail").val('')
@@ -109,7 +109,7 @@ function commande(){
     $.ajax
     (
         {
-            url: "../PHP/script.php",
+            url: "./PHP/script.php",
             success: function()
             {
                 $("#mail").val('')
