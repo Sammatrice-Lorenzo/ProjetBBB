@@ -10,12 +10,6 @@
     </head>
 <body>
 
-<?php
-$retour = mail($_POST['mail'],$_POST['url']);
-if ($retour)
-echo '<p>Votre message a bien été envoyé.</p>';
-?>
-
     <div class="container">
 
         <div class="card text-center mt-5">

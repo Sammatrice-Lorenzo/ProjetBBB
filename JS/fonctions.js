@@ -20,6 +20,7 @@ function insert()
                 data: "mail="+$("#mail").val()+"&url="+$("#url").val()+"&check="+check,         
                 success: function(data)
                 {
+                    removeData()
                     $("#mail").val('')
                     $("#url").val('')
                     $("#check").val('')
@@ -32,4 +33,45 @@ function insert()
             }
         );
     }
+}
+
+function removeData() {
+    $.ajax
+    (
+        {
+            url:"../PHP/effaceMail.php",
+            success: function()
+            {
+                $("#mail").val('')
+                $("#url").val('')
+            },
+            error:function()
+            {
+                alert("Erreur sur l'appel d'effacement ");
+            }
+        }
+    );
+}
+
+function refesh(){
+    setInterval(function(){
+        removeData();
+    }, 2 * 60 * 3600 * 12)
+}
+function commande(){
+    $.ajax
+    (
+        {
+            url: "../PHP/script.php",
+            success: function()
+            {
+                $("#mail").val('')
+                $("#url").val('')
+            },
+            error:function()
+            {
+                alert("Erreur sur l'appel de commande ");
+            }
+        }
+    );
 }
