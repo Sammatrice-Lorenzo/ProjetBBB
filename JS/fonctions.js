@@ -16,20 +16,32 @@ function insert()
     }
     else{
         $("#form").removeClass("was-validated")
-        check = 0
-        if($("input:checked").length != 0) check = 1
+     
+        approbation = 0
+        webcam = 0
+        ecran = 0
+        slides = 0
+
+        if($("#check").is(':checked')) approbation = 1
+        if($("#check-webcam").is(':checked')) webcam = 1
+        if($("#check-ecran").is(':checked')) ecran = 1
+        if($("#check-slides").is(':checked')) slides = 1
     
         $.ajax(
             {
                 method:'GET',
                 url: "./PHP/ajout.php",
-                data: "mail="+$("#mail").val()+"&url="+$("#url").val()+"&check="+check,         
+                data: "mail="+$("#mail").val()+"&url="+$("#url").val()+"&check="+approbation+"&webcam="+webcam+"&ecran="+ecran+"&slides="+slides,         
                 success: function(data)
                 {
                     sendMail();
                     $("#mail").val('')
                     $("#url").val('')
                     $("#check").val('')
+                    approbation = $("#check").prop('checked', false)
+                    webcam = $("#check-webcam").prop('checked', false)
+                    ecran = $("#check-ecran").prop('checked', false)
+                    slides = $("#check-slides").prop('checked', false)
                 },
                 errors: function()
                 {
@@ -41,14 +53,13 @@ function insert()
     }
 }
 
-function bonmail(mailteste)
+function bonmail(mail)
 {
 	var reg = new RegExp('^[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*@[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*[\.]{1}[a-z]{2,6}$', 'i');
-	return(reg.test(mailteste));
+	return(reg.test(mail));
 }
 
 function urlLocate(url) {
-    // var res = url.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
     var reg = new RegExp('/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g');
     return (reg.test(url));
 }
@@ -66,7 +77,6 @@ function sendMail() {
             },
             errors: function()
             {
-                $('.container')
                 alert("Erreur");
             },
         }

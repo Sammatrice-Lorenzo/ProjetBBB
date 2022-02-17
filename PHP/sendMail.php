@@ -18,6 +18,7 @@ $mailUser = $sql->fetchAll();
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
+$mdp = "hackathonbluebutton2022";
 
 try {
     //Server settings
@@ -27,7 +28,7 @@ try {
     $mail->Host = 'smtp-mail.outlook.com'; //Connection du serveur SMTP de outlook
     $mail->SMTPAuth = true;
     $mail->Username = "lvdlbbb@outlook.fr"; //Mail du serveur 
-    $mail->Password = "hackathonbluebutton2022";//Mdp
+    $mail->Password = $mdp;//Mdp
     $mail->setFrom('lvdlbbb@outlook.fr');//Connection du serveur SMTP de outlook
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;

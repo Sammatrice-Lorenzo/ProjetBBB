@@ -16,7 +16,7 @@
             </div>
             <div class="card-body">
                 <div class="contanier">
-                    <form id="form" action="" class="">
+                    <form id="form" class="">
                         <div class="mb-3">
                             <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Email"  aria-describedby="email" required>
                             <div id="email-feedback" class="invalid-feedback">
@@ -27,9 +27,24 @@
                             <div id="url-feedback" class="invalid-feedback">
                             </div>
                         </div>
-                        <div class="mb-3 form-check">
-                            <input id="check" type="checkbox" class="form-check-input">
-                            <label class="form-check-label" data="0">Mémoriser l'adresse mail a des fin commerciales </label>
+                        <div  class="row">
+                            <div class="mb-3">
+                                <input id="check" type="checkbox" class="input" value="1">
+                                <label class="label" data="0">Mémoriser l'adresse mail a des fin commerciales</label>
+                            </div>
+                            <div class="mb-3">
+                                <input id="check-webcam" type="checkbox" class="input">
+                                <label class="label" data="0">WebCam</label>
+                            </div>
+                            <div class="mb-3">
+                                <input id="check-ecran" type="checkbox" class="input">
+                                <label class="label" data="0">Partage d'écran</label>
+                            </div>
+                            <div class="mb-3">
+                                <input id="check-slides" type="checkbox" class="input">
+                                <label class="label" data="0">Slides</label>
+                            </div>
+
                         </div>
                     </div>
                 </form>
