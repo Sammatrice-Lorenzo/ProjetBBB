@@ -15,17 +15,14 @@ $sql =  $cnx->prepare("select mail from user order by id desc");
 $sql->execute();
 $mailUser = $sql->fetchAll();
 
-
-//Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
-// $mdp = "hackathonbluebutton2022";
 
 try {
     //Server settings
     $mail->setLanguage('fr','/PHPMailer/language/');
     $mail->SMTPDebug = 2;
     $mail->isSMTP();
-    $mail->Host = 'smtp.laposte.net'; //Connection du serveur SMTP de outlook
+    $mail->Host = 'smtp.laposte.net'; //Connection du serveur SMTP de la poste
     $mail->SMTPAuth = true;
     $mail->Username = 'lvdlbbb@laposte.net'; //Mail du serveur 
     $mail->Password = 'Hackathonbluebutton2022!';//Mdp
@@ -37,18 +34,13 @@ try {
     $mail->setFrom('lvdlbbb@laposte.net');
     $mail->addAddress($mailUser[0]['mail']); //Ajout du récepteur du mail
 
-    //Attachments
-    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->isHTML(true); //Ici on va set le sujet et le message du mail
     $mail->Subject = utf8_decode("Big Blue Button : lien de téléchargement visio");
     $mail->Body = utf8_decode("<p>Voici le lien de la visio <br><br>Bien cordialement <br><br> L'équipe LVDL</p>");
 
     $mail->send();
-    echo 'Message has been sent';
+    echo 'Le mail à été bien envoyé';
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo "Le message n'a pas été envoyé. Le message d'erreur : {$mail->ErrorInfo}";
 }
 ?>
