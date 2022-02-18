@@ -34,6 +34,8 @@ try {
     $mail->setFrom('lvdlbbb@laposte.net');
     $mail->addAddress($mailUser[0]['mail']); //Ajout du récepteur du mail
 
+    $mail->addAttachment('../tmp//Interface WEB.mp4', 'new.mp4'); //Envoie des piéces jointes
+
     $mail->isHTML(true); //Ici on va set le sujet et le message du mail
     $mail->Subject = utf8_decode("Big Blue Button : lien de téléchargement visio");
     $mail->Body = utf8_decode("<p>Voici le lien de la visio <br><br>Bien cordialement <br><br> L'équipe LVDL</p>");
@@ -41,6 +43,6 @@ try {
     $mail->send();
     echo 'Le mail à été bien envoyé';
 } catch (Exception $e) {
-    return "Le message n'a pas été envoyé. Le message d'erreur : {$mail->ErrorInfo}";
+    echo "Le message n'a pas été envoyé. Le message d'erreur : {$mail->ErrorInfo}";
 }
 ?>
