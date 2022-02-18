@@ -13,7 +13,7 @@
         <div class="container">
             <div class="card text-center mt-5">
                 <div class="card-header">
-                    Big Blue Button Récuperation Vidéo 
+                    Big Blue Button Récupération Vidéo 
                 </div>
                 <div class="card-body">
                     <div class="contanier">
