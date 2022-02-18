@@ -37,7 +37,7 @@
                             <div  class="row">
                                 <div class="mb-3">
                                     <input id="check" type="checkbox" class="input" value="1">
-                                    <label class="label" data="0">Mémoriser l'adresse mail a des fin commerciales</label>
+                                    <label class="label" data="0">Mémoriser l'adresse mail à des fin commerciales</label>
                                 </div>
                                 <div class="mb-3">
                                     <input id="check-webcam" type="checkbox" class="input">
