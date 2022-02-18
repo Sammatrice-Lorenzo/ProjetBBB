@@ -41,6 +41,6 @@ try {
     $mail->send();
     echo 'Le mail à été bien envoyé';
 } catch (Exception $e) {
-    echo "Le message n'a pas été envoyé. Le message d'erreur : {$mail->ErrorInfo}";
+    return "Le message n'a pas été envoyé. Le message d'erreur : {$mail->ErrorInfo}";
 }
 ?>

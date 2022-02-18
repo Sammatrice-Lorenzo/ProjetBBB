@@ -1,4 +1,6 @@
-
+/**
+ * Function qui va permettre d'appeler le ficheir php pour envoyer le data récupeé et insérer les données dans la bdd
+ */
 function insert()
 {
     $("#email-feedback").empty()
@@ -22,6 +24,7 @@ function insert()
         ecran = 0
         slides = 0
 
+        //On vérifie les si les checkbox on été sélectionné
         if($("#check").is(':checked')) approbation = 1
         if($("#check-webcam").is(':checked')) webcam = 1
         if($("#check-ecran").is(':checked')) ecran = 1
@@ -36,9 +39,11 @@ function insert()
                 {
                     sendMail();
                     removeData()
+                    
                     $("#mail").val('')
                     $("#url").val('')
                     $("#check").val('')
+
                     approbation = $("#check").prop('checked', false)
                     webcam = $("#check-webcam").prop('checked', false)
                     ecran = $("#check-ecran").prop('checked', false)
@@ -46,7 +51,6 @@ function insert()
                 },
                 errors: function()
                 {
-                    $('.container')
                     alert("Erreur");
                 },
             }
@@ -65,16 +69,21 @@ function urlLocate(url) {
     return (reg.test(url));
 }
 
+/**
+ * Function qui va appeler le script de envoie de mail
+ */
 function sendMail() {
+    $('.toast-body').empty()
+
     $.ajax(
     {
         method:'GET',
         url: "./PHP/sendMail.php",
         success: function(data)
         {
-            $("#mail").val('')
-            $("#url").val('')
-            $("#check").val('')
+            $('.toast-body').append("L'envoie du mail est en cours")
+            $(".toast").toast("show");
+            commande() //Appelle de la fonction Commande()
         },
         errors: function()
         {
@@ -83,6 +92,9 @@ function sendMail() {
     })
 }
 
+/**
+ * Fonction qui va permettre d'appeler la page php pour effacer le mail si cela respecte bien les condictions
+ */
 function removeData() {
     $.ajax(
     {
@@ -105,11 +117,14 @@ function refesh(){
     }, 2 * 60 * 3600 * 12)
 }
 
+/**
+ * Fonction qui permet d'appeler la page pour éxecuter la commande
+ */
 function commande(){
     $.ajax
     (
         {
-            url: "./PHP/script.php",
+            url: "./PHP/bash.php",
             success: function()
             {
                 $("#mail").val('')
